@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CustomerNo">
+          <DataField>CustomerNo</DataField>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+        </Field>
+        <Field Name="CompanyInfoName">
+          <DataField>CompanyInfoName</DataField>
+        </Field>
+        <Field Name="ReportName">
+          <DataField>ReportName</DataField>
+        </Field>
+        <Field Name="AsOnDateTime">
+          <DataField>AsOnDateTime</DataField>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+        </Field>
+        <Field Name="Customer_CBM">
+          <DataField>Customer_CBM</DataField>
+        </Field>
+        <Field Name="Customer_CBMFormat">
+          <DataField>Customer_CBMFormat</DataField>
+        </Field>
+        <Field Name="Storage_Condition">
+          <DataField>Storage_Condition</DataField>
+        </Field>
+        <Field Name="Per_Day_Rate">
+          <DataField>Per_Day_Rate</DataField>
+        </Field>
+        <Field Name="Per_Day_RateFormat">
+          <DataField>Per_Day_RateFormat</DataField>
+        </Field>
+        <Field Name="Posting_Date">
+          <DataField>Posting_Date</DataField>
+        </Field>
+        <Field Name="Item_Code">
+          <DataField>Item_Code</DataField>
+        </Field>
+        <Field Name="Item_Name">
+          <DataField>Item_Name</DataField>
+        </Field>
+        <Field Name="length">
+          <DataField>length</DataField>
+        </Field>
+        <Field Name="lengthFormat">
+          <DataField>lengthFormat</DataField>
+        </Field>
+        <Field Name="width">
+          <DataField>width</DataField>
+        </Field>
+        <Field Name="widthFormat">
+          <DataField>widthFormat</DataField>
+        </Field>
+        <Field Name="height">
+          <DataField>height</DataField>
+        </Field>
+        <Field Name="heightFormat">
+          <DataField>heightFormat</DataField>
+        </Field>
+        <Field Name="cbm">
+          <DataField>cbm</DataField>
+        </Field>
+        <Field Name="cbmFormat">
+          <DataField>cbmFormat</DataField>
+        </Field>
+        <Field Name="cpm">
+          <DataField>cpm</DataField>
+        </Field>
+        <Field Name="cpmFormat">
+          <DataField>cpmFormat</DataField>
+        </Field>
+        <Field Name="cpr">
+          <DataField>cpr</DataField>
+        </Field>
+        <Field Name="cprFormat">
+          <DataField>cprFormat</DataField>
+        </Field>
+        <Field Name="GoodsIn_UOM">
+          <DataField>GoodsIn_UOM</DataField>
+        </Field>
+        <Field Name="GoodsIn_UOMFormat">
+          <DataField>GoodsIn_UOMFormat</DataField>
+        </Field>
+        <Field Name="GoodsOut_UOM">
+          <DataField>GoodsOut_UOM</DataField>
+        </Field>
+        <Field Name="GoodsOut_UOMFormat">
+          <DataField>GoodsOut_UOMFormat</DataField>
+        </Field>
+        <Field Name="GoodsInOut_UOM">
+          <DataField>GoodsInOut_UOM</DataField>
+        </Field>
+        <Field Name="GoodsInOut_UOMFormat">
+          <DataField>GoodsInOut_UOMFormat</DataField>
+        </Field>
+        <Field Name="GoodsIn_Actual_Pallet">
+          <DataField>GoodsIn_Actual_Pallet</DataField>
+        </Field>
+        <Field Name="GoodsIn_Actual_PalletFormat">
+          <DataField>GoodsIn_Actual_PalletFormat</DataField>
+        </Field>
+        <Field Name="GoodsIn_Round_Pallet">
+          <DataField>GoodsIn_Round_Pallet</DataField>
+        </Field>
+        <Field Name="GoodsIn_Round_PalletFormat">
+          <DataField>GoodsIn_Round_PalletFormat</DataField>
+        </Field>
+        <Field Name="GoodsOut_Actual_Pallet">
+          <DataField>GoodsOut_Actual_Pallet</DataField>
+        </Field>
+        <Field Name="GoodsOut_Actual_PalletFormat">
+          <DataField>GoodsOut_Actual_PalletFormat</DataField>
+        </Field>
+        <Field Name="GoodsOut_Round_Pallet">
+          <DataField>GoodsOut_Round_Pallet</DataField>
+        </Field>
+        <Field Name="GoodsOut_Round_PalletFormat">
+          <DataField>GoodsOut_Round_PalletFormat</DataField>
+        </Field>
+        <Field Name="GoodsInOut_Actual_Pallet">
+          <DataField>GoodsInOut_Actual_Pallet</DataField>
+        </Field>
+        <Field Name="GoodsInOut_Actual_PalletFormat">
+          <DataField>GoodsInOut_Actual_PalletFormat</DataField>
+        </Field>
+        <Field Name="GoodsInOut_Round_Pallet">
+          <DataField>GoodsInOut_Round_Pallet</DataField>
+        </Field>
+        <Field Name="GoodsInOut_Round_PalletFormat">
+          <DataField>GoodsInOut_Round_PalletFormat</DataField>
+        </Field>
+        <Field Name="OpeningStock_UOM">
+          <DataField>OpeningStock_UOM</DataField>
+        </Field>
+        <Field Name="OpeningStock_UOMFormat">
+          <DataField>OpeningStock_UOMFormat</DataField>
+        </Field>
+        <Field Name="ClosingStock_UOM">
+          <DataField>ClosingStock_UOM</DataField>
+        </Field>
+        <Field Name="ClosingStock_UOMFormat">
+          <DataField>ClosingStock_UOMFormat</DataField>
+        </Field>
+        <Field Name="OpeningStock_Actual_Pallet">
+          <DataField>OpeningStock_Actual_Pallet</DataField>
+        </Field>
+        <Field Name="OpeningStock_Actual_PalletFormat">
+          <DataField>OpeningStock_Actual_PalletFormat</DataField>
+        </Field>
+        <Field Name="OpeningStock_Round_Pallet">
+          <DataField>OpeningStock_Round_Pallet</DataField>
+        </Field>
+        <Field Name="OpeningStock_Round_PalletFormat">
+          <DataField>OpeningStock_Round_PalletFormat</DataField>
+        </Field>
+        <Field Name="ClosingStock_Actual_Pallet">
+          <DataField>ClosingStock_Actual_Pallet</DataField>
+        </Field>
+        <Field Name="ClosingStock_Actual_PalletFormat">
+          <DataField>ClosingStock_Actual_PalletFormat</DataField>
+        </Field>
+        <Field Name="ClosingStock_Round_Pallet">
+          <DataField>ClosingStock_Round_Pallet</DataField>
+        </Field>
+        <Field Name="ClosingStock_Round_PalletFormat">
+          <DataField>ClosingStock_Round_PalletFormat</DataField>
+        </Field>
+        <Field Name="ChargesAmount">
+          <DataField>ChargesAmount</DataField>
+        </Field>
+        <Field Name="ChargesAmountFormat">
+          <DataField>ChargesAmountFormat</DataField>
+        </Field>
+        <Field Name="VATAmount">
+          <DataField>VATAmount</DataField>
+        </Field>
+        <Field Name="VATAmountFormat">
+          <DataField>VATAmountFormat</DataField>
+        </Field>
+        <Field Name="NetAmount">
+          <DataField>NetAmount</DataField>
+        </Field>
+        <Field Name="NetAmountFormat">
+          <DataField>NetAmountFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
